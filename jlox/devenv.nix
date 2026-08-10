@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, ... }:
 
 {
   # https://devenv.sh/basics/
@@ -9,8 +9,11 @@
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
-  languages.java.enable = true;
-  languages.java.lsp.enable = true;
+  languages.java = {
+    enable = true;
+    jdk.package = pkgs.jdk21;
+  };
+
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
 
@@ -20,6 +23,14 @@
   # https://devenv.sh/scripts/
   scripts.hello.exec = ''
     echo hello from $GREET
+  '';
+
+  scripts.build.exec = ''
+    rm -rf out
+    javac -d out $(find src -name '*.java')
+  '';
+  scripts.run.exec = ''
+    java -cp out com.craftinginterpreters.lox.Lox
   '';
 
   # https://devenv.sh/basics/
