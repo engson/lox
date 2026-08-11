@@ -21,13 +21,10 @@
   # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = ''
-    echo hello from $GREET
-  '';
 
   scripts.build.exec = ''
     rm -rf out
-    javac -d out $(find src -name '*.java')
+    javac -d out $(find com -name '*.java')
   '';
   scripts.run.exec = ''
     java -cp out com.craftinginterpreters.lox.Lox
@@ -35,7 +32,6 @@
 
   # https://devenv.sh/basics/
   enterShell = ''
-    hello         # Run scripts directly
     git --version # Use packages
   '';
 
