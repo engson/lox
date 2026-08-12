@@ -155,7 +155,7 @@ class Scanner {
       return;
     }
     // the closing "
-    advance()
+    advance();
 
     String value = source.substring(start + 1, current - 1);
     addToken(STRING, value);
