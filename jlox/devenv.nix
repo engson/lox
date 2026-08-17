@@ -29,6 +29,10 @@
   scripts.run.exec = ''
     java -cp out com.craftinginterpreters.lox.Lox
   '';
+  scripts.buildt.exec = ''
+    javac -d out com/craftinginterpreters/tool/GenerateAst.java
+    java -cp out com.craftinginterpreters.tool.GenerateAst com/craftinginterpreters/lox  
+  '';
 
   # https://devenv.sh/basics/
   enterShell = ''
