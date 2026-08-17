@@ -24,8 +24,8 @@
 
   scripts.build.exec = ''
     rm -rf out
-    javac -d out $(find com -name '*.java')
-  '';
+    javac -d out $(find com/craftinginterpreters/lox -name '*.java')
+    '';
   scripts.run.exec = ''
     java -cp out com.craftinginterpreters.lox.Lox
   '';
