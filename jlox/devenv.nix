@@ -5,7 +5,9 @@
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = [
+    pkgs.git
+  ];
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
@@ -13,7 +15,6 @@
     enable = true;
     jdk.package = pkgs.jdk21;
   };
-
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
 
