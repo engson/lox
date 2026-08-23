@@ -36,6 +36,9 @@
     python -m src.token
   '';
 
+  scripts.plox.exec = ''
+    python -m src.lox "$@"
+  '';
   # https://devenv.sh/basics/
   enterShell = ''
     hello         # Run scripts directly

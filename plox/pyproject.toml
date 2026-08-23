@@ -7,7 +7,9 @@ authors = [
     { name = "engson", email = "corastweb94@hotmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "frozendict",
+]
 
 [project.scripts]
 plox = "plox:main"
