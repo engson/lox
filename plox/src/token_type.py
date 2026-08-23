@@ -25,6 +25,11 @@ class TokenType(Enum):
     LESS = auto()
     LESS_EQUAL = auto()
 
+    # Literals
+    IDENTIFIER = auto()
+    STRING = auto()
+    NUMBER = auto()
+
     # Keywords
     AND = auto()
     CLASS = auto()

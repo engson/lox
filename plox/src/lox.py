@@ -14,9 +14,18 @@ def main():
 def runFile(file: str):
     with open(file) as f:
         print(f.read())
+    if had_error:
+        sys.exit(65)
 
 def runPrompt():
+
     pass
+
+def report(line: int, where: str, message: str):
+    sys.stderr.write(f"[line {line}] Error {where}: {message}")
+
+def error(line: int, message: str):
+    report(line, "", message)
 
 if __name__ == "__main__":
     main()
